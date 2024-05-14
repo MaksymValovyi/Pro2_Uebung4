@@ -2,6 +2,7 @@
 using namespace std;
 
 #include "Complex.h"
+#include "Complex_ExcDiv.h"
 #include "Complex_ExcDivByZero.h"
 #include <assert.h>
 
@@ -57,9 +58,16 @@ Complex Complex::operator/( const Complex& p) {
     // assert( c!= 0 || d!= 0);
     
     if( (c==0) && (d==0) ){
-        throw Complex_ExcDiv(*this, p);
+        throw Complex_ExcDivByZero(*this, p);
+        //throw Complex_ExcDiv(*this, p);
     }
 
+//TO DO:
+/*
+    if( abs(c1) / abs(c2) > 1024){
+        throw Complex_ExcDivNumeric(*this, p);
+    }
+*/
     r.setRe((a*c + b * d) / (c*c + d * d)); 
     r.setIm((b*c - a * d) / (c*c + d * d));
     return r; 

@@ -1,3 +1,5 @@
+//I have exchanged ExcDiv and ExcDivByZero
+
 #include <iostream>
 #include <exception>
 
@@ -18,6 +20,7 @@ public:
         {
             
         }
+        
     virtual const char* what(){
         return "Complex_ExcDiv Basis Exception";
     }
@@ -27,5 +30,7 @@ public:
     Complex getD2(){return d2;}
 
 };
+
+ostream& operator<<(ostream& s, Complex_ExcDiv *e);
 
 #endif // __MyComplexExc__

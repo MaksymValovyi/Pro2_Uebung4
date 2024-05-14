@@ -31,6 +31,7 @@ void testComplexException()
     catch (Complex_ExcDiv &e)
     {
         e.print();
+        cout << &e;
         cout << "Some handling..." << endl;
         //cout << e; Waere cool, aber spaeter
     }
