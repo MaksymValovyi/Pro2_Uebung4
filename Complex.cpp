@@ -2,6 +2,7 @@
 using namespace std;
 
 #include "Complex.h"
+#include <assert.h>
 
 
 Complex::Complex(double real_part, double imag_part)
@@ -52,6 +53,8 @@ Complex Complex::operator/( const Complex& p) {
     Complex r(re, im);
     
     // Uebung 4 assert
+    assert( c!= 0 || d!= 0);
+    
     r.setRe((a*c + b * d) / (c*c + d * d)); 
     r.setIm((b*c - a * d) / (c*c + d * d));
     return r; 
