@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+#ifndef ComplexNum
+#define ComplexNum
+
 class Complex
 {
 
@@ -55,3 +58,5 @@ ostream& operator<<(ostream& os, const Complex &c);
 Complex operator*(int , const Complex&);
 Complex operator*( const Complex&, int);
 //global
+
+#endif // ComplexNum

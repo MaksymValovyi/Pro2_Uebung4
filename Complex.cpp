@@ -2,6 +2,7 @@
 using namespace std;
 
 #include "Complex.h"
+#include "Complex_ExcDivByZero.h"
 #include <assert.h>
 
 
@@ -53,8 +54,12 @@ Complex Complex::operator/( const Complex& p) {
     Complex r(re, im);
     
     // Uebung 4 assert
-    assert( c!= 0 || d!= 0);
+    // assert( c!= 0 || d!= 0);
     
+    if( (c==0) && (d==0) ){
+        throw Complex_ExcDiv(*this, p);
+    }
+
     r.setRe((a*c + b * d) / (c*c + d * d)); 
     r.setIm((b*c - a * d) / (c*c + d * d));
     return r; 
