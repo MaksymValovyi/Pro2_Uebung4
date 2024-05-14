@@ -27,7 +27,20 @@ public:
         return im;
     };
 
+    //Setters 
+    void setRe(double number)
+    {
+        re = number;
+    };
+    void setIm(double number)
+    {
+        im = number;
+    };
+
     Complex operator+(const Complex &c1);
+    //Division
+    Complex operator/(const Complex &c1);
+
     Complex operator*(const Complex &c1) const;
     //friend Complex operator*(const Complex &c1, int number);
 

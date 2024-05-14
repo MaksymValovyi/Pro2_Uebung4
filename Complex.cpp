@@ -45,6 +45,18 @@ Complex Complex::operator+(const Complex &c1) const
     return cresult;
 }
 
+//Division 
+Complex Complex::operator/( const Complex& p) {
+    double a = re, b = im;
+    double c = p.getRe(), d = p.getIm(); 
+    Complex r(re, im);
+    
+    // Uebung 4 assert
+    r.setRe((a*c + b * d) / (c*c + d * d)); 
+    r.setIm((b*c - a * d) / (c*c + d * d));
+    return r; 
+};
+
 
 ///////// Hier folgen die globalen Funktionen
 
